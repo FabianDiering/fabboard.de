@@ -98,6 +98,8 @@ section{padding:40px 0 8px}
 .nach[hidden]{display:none}
 .nach ol{margin:8px 0 0;padding-left:22px}
 .nach li{margin:6px 0}
+.nach p{margin:10px 0 0}
+.nach p.nb{margin-top:18px}
 .fuss{margin-top:56px;padding:16px 0 32px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--muted)}
 .fuss a{color:var(--muted)}
 .fuss .re{margin-left:auto}
