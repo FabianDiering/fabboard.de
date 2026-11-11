@@ -1,0 +1,26 @@
+# fabBoard
+
+> fabBoard is a free, open-source desktop program for Windows (10 and 11) that puts a decision board between you and your AI. You write tasks on the board, the AI (Claude, ChatGPT/Codex, Gemini, Mistral or a local model) works in the project folder, and it puts its questions with options and a recommendation on the board. You click an answer, and the AI implements it. Several projects can run at the same time, each with its own AI.
+
+Key facts:
+- Free, MIT licence, source code on GitHub
+- Windows 10 and 11; Mac planned
+- Works with Claude, ChatGPT/Codex, Gemini, Mistral or a model on your own computer; the AI can be chosen per project
+- Setup without prior knowledge: the AI is installed with one click, no administrator rights, no command line
+- Data stays local as plain files; no account, no telemetry
+- Interface in German and English, light and dark mode
+- Made by Fabian Diering, Berlin, Germany
+
+## Pages
+- [Website (English)](https://fabboard.de/en/): what fabBoard does, how it works, examples, download
+- [Website (Deutsch)](https://fabboard.de/): dieselben Inhalte auf Deutsch
+- [Product sheet (PDF)](https://fabboard.de/dokumente/fabBoard-Product-Sheet.pdf)
+- [Produktblatt (PDF)](https://fabboard.de/dokumente/fabBoard-Produktblatt.pdf)
+
+## Download and source
+- [Download (GitHub Releases)](https://github.com/FabianDiering/fabBoard/releases)
+- [Source code](https://github.com/FabianDiering/fabBoard)
+- [Privacy of the program](https://github.com/FabianDiering/fabBoard/blob/main/PRIVACY.md)
+
+## Contact
+- Email: fab@fabboard.de
