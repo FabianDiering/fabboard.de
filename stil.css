@@ -1,0 +1,90 @@
+:root{--bg:#FCFCFA;--ink:#1A1A1A;--text2:#4A4A45;--muted:#6B6B66;--num:#66665F;--line:#E6E6E3;--field:#F4F4F1;--card:#FFFFFF;--accent:#3E5C76;--mark:#E8EEF3;--buehne:#EEF2F5;--or:#F07C1F;--gruen:#2E8B57;--onink:#FFFFFF;--hover:#333333;--serif:'Source Serif 4',Georgia,serif;--sans:Inter,system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141516;--ink:#ECECE8;--text2:#C4C4BE;--muted:#9A9A94;--num:#8F8F89;--line:#2E3032;--field:#1F2123;--card:#191B1C;--accent:#8FB0CC;--mark:#22313D;--buehne:#1A2229;--gruen:#5DBB85;--onink:#141516;--hover:#D0D0CB;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141516;--ink:#ECECE8;--text2:#C4C4BE;--muted:#9A9A94;--num:#8F8F89;--line:#2E3032;--field:#1F2123;--card:#191B1C;--accent:#8FB0CC;--mark:#22313D;--buehne:#1A2229;--gruen:#5DBB85;--onink:#141516;--hover:#D0D0CB;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.6 var(--sans);background:var(--bg);color:var(--ink)}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+@media (min-width:900px){.wrap{padding:0 48px}}
+.cap{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+/* Kopf wie in der App: Wortmarke links, Linie in Tintenfarbe */
+.kopf{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:18px 0 12px;border-bottom:1px solid var(--ink)}
+.marke{font:900 28px/1 'Inter Tight',var(--sans);letter-spacing:-.03em;color:var(--ink);text-decoration:none}
+.marke .pkt{color:#F07C1F;font-size:1.5em;line-height:0;letter-spacing:0}
+.kopf nav{display:flex;gap:18px;align-items:baseline;font-size:14px}
+.kopf nav a{color:var(--muted);text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent}
+.kopf nav a:hover{color:var(--ink);border-bottom-color:var(--or)}
+/* Orange-Akzente (entschieden 2026-11-11, Vorschläge B, D, G, H, I): Punkt vor Abschnittstiteln und Bild-Unterschriften,
+   Strich unter dem geöffneten Beispiel, im Menü und ganz oben; dazu Symbole (J) und Newsletter-Karte (K) */
+/* Farbelemente (entschieden 2026-11-11, Vorschläge 1, 2 und 6 heller): Kopfbereich auf Markierungsfläche über die ganze Breite,
+   Bildschirmfotos auf einer hellen Bühne, Herunterladen auf heller Fläche mit weißen Kästen */
+body{overflow-x:clip;border-top:4px solid var(--or)}
+.kopf{border-bottom-color:transparent!important}
+.held{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;padding:56px 0 48px;margin-bottom:32px;position:relative;isolation:isolate}
+.held::before{content:'';position:absolute;z-index:-1;inset:0 calc(50% - 50vw);background:var(--mark)}
+.held .laden{padding-bottom:6px}
+.held h1{margin:0 0 14px;font:600 clamp(32px,5.4vw,52px)/1.08 var(--serif);letter-spacing:-.02em;text-wrap:balance;max-width:16em}
+.held .unter{margin:0;font-size:clamp(17px,2vw,20px);line-height:1.5;color:var(--text2);max-width:36em}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:6px;background:#2E8B57;color:#FFFFFF;font:500 16px var(--sans);text-decoration:none}
+/* Download-Knopf gefüllt grün wie der Start-Knopf (entschieden 2026-11-11) */
+.btn:hover{background:#26754A}
+.btn svg{width:18px;height:18px}
+.btn.zwei{background:transparent;color:var(--gruen);border:1.5px solid var(--gruen)}  /* Newsletter: grün umrandet (entschieden 2026-11-11) */
+.btn.zwei:hover{background:var(--field)}
+.news{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 48px;align-items:center;background:var(--mark);border-radius:14px;padding:clamp(18px,3vw,30px)}
+.news p{margin:0;max-width:36em}
+.news .wie{margin-top:6px;color:var(--text2);font-size:15px}
+.news .ohne{margin-top:10px;font-size:13px;color:var(--muted)}
+.ladezeile{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+.intro{margin:0;max-width:40em;color:var(--text2)}
+/* Anwendungsbeispiele: zugeklappt, Klick auf die Zeile klappt auf (entschieden 2026-11-11) */
+.bsp{border-bottom:1px solid var(--line)}
+.bsp summary{display:flex;align-items:baseline;gap:6px 16px;flex-wrap:wrap;padding:14px 36px 14px 0;cursor:pointer;list-style:none;position:relative}
+.bsp summary::-webkit-details-marker{display:none}
+.bsp summary::after{content:'+';position:absolute;right:4px;top:10px;font:400 26px/1 var(--sans);color:var(--muted)}
+.bsp[open] summary::after{content:'−'}
+.bsp summary:hover .bt{color:var(--accent)}
+.bsp[open] .bt{box-shadow:inset 0 -2px 0 var(--or);padding-bottom:2px}
+.bsp[open] summary:hover .bt{color:var(--ink)}
+.bsp .cap{flex:0 0 160px}  /* feste Breite, damit die Titel der Beispiele bündig stehen */
+@media (max-width:560px){.bsp .cap{flex-basis:100%}}
+.bsp .bt{font:600 20px/1.3 var(--serif)}
+.bsp .bi{padding:0 0 24px}
+.klein{margin:8px 0 0;font-size:14px;color:var(--muted)}
+figure{margin:28px 0 0;background:var(--buehne);border-radius:14px;padding:clamp(14px,3vw,36px) clamp(14px,3vw,36px) 14px}
+.bild{display:block;width:100%;height:auto;border-radius:8px;background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.06),0 12px 32px rgba(30,50,70,.14)}
+figcaption{margin-top:8px;font-size:13px;color:var(--muted)}
+figcaption::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--or);margin-right:8px;vertical-align:1px}
+section{padding:40px 0 8px}
+.titel{display:block;padding-bottom:10px;border-bottom:1px solid var(--ink);margin-bottom:18px;color:var(--ink)}
+.titel::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--or);margin-right:8px;vertical-align:1px}
+.schritte{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:0;padding:0;list-style:none}
+.schritte h3{margin:0 0 6px;font:600 20px/1.25 var(--serif)}
+.schritte .nr{color:var(--accent);margin-right:8px}
+.schritte p{margin:0;color:var(--text2);font-size:15px}
+.merkmale{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin:0;padding:0;list-style:none}
+.merkmale li{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:12px}
+.merkmale li>*:not(.ik){grid-column:2}
+.merkmale .ik{display:flex;grid-row:1/span 2;width:34px;height:34px;border-radius:50%;background:var(--mark);color:var(--accent);align-items:center;justify-content:center}
+.merkmale .ik svg{width:18px;height:18px}
+.merkmale b{display:block;font-weight:600}
+.merkmale span{color:var(--text2);font-size:15px}
+.kaesten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.5vw,24px);background:var(--buehne);border-radius:14px;padding:clamp(14px,3vw,30px)}
+.kasten{padding:22px 24px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.kasten .cap{color:var(--ink);display:block;margin-bottom:10px}
+.kasten ul{margin:0;padding-left:18px;color:var(--text2);font-size:15px}
+.kasten li+li{margin-top:6px}
+.kasten p{margin:0 0 14px;color:var(--text2);font-size:15px}
+.kasten .hinweis{font-size:13px;color:var(--muted);margin:14px 0 0}
+.fuss{margin-top:56px;padding:16px 0 32px;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--muted)}
+.fuss a{color:var(--muted)}
+.fuss .re{margin-left:auto}
+@media (max-width:760px){
+ .held,.news{grid-template-columns:minmax(0,1fr)}
+ .held{padding:36px 0 28px}
+ .schritte,.merkmale,.kaesten{grid-template-columns:minmax(0,1fr)}
+ .schritte{gap:22px}
+ .fuss .re{margin-left:0}
+}
